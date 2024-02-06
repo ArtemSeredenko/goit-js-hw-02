@@ -1,15 +1,11 @@
 function checkForSpam(message) {
-  const lowerCase = message.toLowerCase();
-  let boolMessage;
-  if (lowerCase.includes('spam') || lowerCase.includes('sale')) {
-    boolMessage = 'true';
-  } else {
-    boolMessage = 'false';
-  }
-  return boolMessage;
+  return (
+    message.toLowerCase().includes('spam') ||
+    message.toLowerCase().includes('sale')
+  );
 }
 
-console.log(checkForSpam('Последняя технология новостей')); // false
+console.log(checkForSpam('Latest technology news')); // false
 console.log(checkForSpam('JavaScript weekly newsletter')); // false
 console.log(checkForSpam('Get best sale offers now!')); // true
 console.log(checkForSpam('Amazing SalE, only tonight!')); // true
